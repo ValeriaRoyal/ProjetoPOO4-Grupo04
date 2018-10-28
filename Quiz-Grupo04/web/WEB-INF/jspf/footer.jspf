@@ -1,3 +1,7 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<h2>Hello World!</h2>
+<footer>
+	<div class="container-fluid text-center">
+		<h4>Copyright - Todos os direitos reservados</h4>
+	</div>
+</footer>
