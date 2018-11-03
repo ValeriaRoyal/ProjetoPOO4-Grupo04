@@ -27,7 +27,9 @@
             <%}%>
             <hr/>
             <%}%>
-            <input type="submit" name="enviar_test" value="Enviar"/>
+            <input type="submit" class="btn btn-outline-light" name="enviar_test" value="Enviar"/>
+            <button type="submit" formaction="login.jsp" class="btn btn-outline-light">Voltar</button>
+
             
         </form>
     <br>
