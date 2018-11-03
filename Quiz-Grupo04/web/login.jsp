@@ -11,16 +11,15 @@
         
         <%@include file="WEB-INF/jspf/hearder.jspf" %>
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
-        <link href="css/grid.css" rel="stylesheet">
         
     </head>
     
-    <body class="text-center">
-    
-        <div class="row">
-            <div class="col-12">.col-9</div>
-            <div class="col-6"></div>
-            <div class="col-6"></div>
+    <body>
+        
+        <div class="row align-items-center" >
+            <div class="col-md-12">Login</div>
+            <div class="col-md-6">Top 10</div>
+            <div class="col-md-6">Historico</div>
         </div>
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
