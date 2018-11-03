@@ -15,19 +15,33 @@
         
     </head>
     <body class="text-center">
+        <h1>Quiz</h1>
+         <% if (request.getParameter("quizz") != null){
+            int cdz = 0;
+            for (Quiz q: Db.getQuiz()){
+                String userAnswer = request.getParameter(q.getQuiz());
+                if(userAnswer.equals(q.getAnswer())){
+                    cdz++;
+                }
+            } %>
+            <div class="form-signin btn-outline-light">
+            <h1 style="color:gold">
+                Nota: <u><%= Math.round(100*((double)(cdz)/10.0)) %></u>
+            </h1>
+            <% } %>
+            </div> 
         <form>
             <%for(Quiz q: Db.getQuiz()){%>
             <h4><%=q.getQuiz()%></h4>
             <%for(int i=0; i<q.getAlternatives().length; i++){%>
-            <input
-                type="radio"
+            <input type="radio"
                 name="<%=q.getQuiz()%>" 
                 value="<%=q.getAlternatives()[i]%>"
                 /><strong><%=q.getAlternatives()[i]%></strong>
             <%}%>
             <hr/>
             <%}%>
-            <input type="submit" class="btn btn-outline-light" name="enviar_test" value="Enviar"/>
+            <input type="submit" class="btn btn-outline-light" name="quizz" value="Enviar"/>
             <button type="submit" formaction="login.jsp" class="btn btn-outline-light">Voltar</button>
 
             

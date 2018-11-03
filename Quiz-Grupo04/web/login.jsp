@@ -24,7 +24,7 @@
                     <h1 class="h3 mb-3 font-weight-normal">Insira o login</h1>
                     <label for="inputUser" class="sr-only">Nome do usuário</label>
                     <input type="user" id="inputUser" class="form-control" placeholder="Nome do usuário" required autofocus>
-                    <button class="btn btn-lg btn-primary btn-block"  type="submit">Entrar no Quiz</button>
+                    <button class="btn btn-lg btn-outline-light btn-block"  type="submit">Entrar no Quiz</button>
                 </form>
             
             </div>
