@@ -8,13 +8,13 @@
 <%@page import="br.com.fatecpg.quiz.Db"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <%@include file="WEB-INF/jspf/hearder.jspf" %>
-        </head>
+        <%@include file="WEB-INF/jspf/navbar.jspf" %>
+        
     </head>
     <body class="text-center">
-        <%@include file="WEB-INF/jspf/navbar.jspf" %>
         <form>
             <%for(Quiz q: Db.getQuiz()){%>
             <h4><%=q.getQuiz()%></h4>
