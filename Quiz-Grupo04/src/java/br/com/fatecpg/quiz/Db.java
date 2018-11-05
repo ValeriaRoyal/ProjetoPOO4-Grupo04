@@ -5,6 +5,7 @@
  */
 package br.com.fatecpg.quiz;
 
+import java.util.Collections;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +13,8 @@ import java.util.ArrayList;
  * @author valre
  */
 public class Db {
+    int i;
+    private Db db = new Db();
     public static ArrayList<Quiz> getQuiz(){
         ArrayList<Quiz> quiz = new ArrayList<>();
         quiz.add(new Quiz("Qual cavaleiro ajudou Athena a escapar do Santuário há 13 anos?", "Sagitário", new String[]{" Sagitário"," Libra"," Aries"}));
@@ -25,7 +28,10 @@ public class Db {
         quiz.add(new Quiz("Onde Hyoga de Cisne obteve a sua Armadura?", " Sibéria Oriental", new String[]{" Colinas Bomi, Libéria"," Montanhas Rochosas, Canadá"," Sibéria Oriental"}));
         quiz.add(new Quiz("A armadura de qual constelação é um arsenal de armas?", " Libra", new String[]{" Libra"," Peixes"," Áries"}));
         
+       Collections.shuffle(quiz);
+        
         return quiz;
         
     }
+    
 }
