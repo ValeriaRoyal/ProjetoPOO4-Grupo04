@@ -4,14 +4,17 @@
     Author     : valre
 --%>
 
+<%@page import="br.com.fatecpg.quiz.Player"%>
+<%@page import="br.com.fatecpg.quiz.Db"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <%@include file="WEB-INF/jspf/hearder.jspf" %>
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
-        <link href="css/body.css" rel="stylesheet">
-        <link href="css/signin.css" rel="stylesheet">
+        
         
     </head>
     
@@ -24,12 +27,59 @@
                     <h1 class="h3 mb-3 font-weight-normal">Insira o login</h1>
                     <label for="inputUser" class="sr-only">Nome do usuário</label>
                     <input type="user" id="inputUser" class="form-control" placeholder="Nome do usuário" required autofocus>
-                    <button class="btn btn-lg btn-outline-light btn-block"  type="submit">Entrar no Quiz</button>
+                    <button class="btn btn-lg btn-outline-light btn-block"  type="submit" formaction="home.jsp">Entrar no Quiz</button>
                 </form>
             
             </div>
-            <div class="col-md-6"><strong>Top 10</strong></div>
-            <div class="col-md-6"><strong>Historico</strong></div>
+            <div class="col-md-6">
+                <strong>Top 10</strong>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                      </tr>
+                    </thead>
+                           <%int i =1; %>      
+                    <tbody>
+                       <% for (Player p : Db.getPlayers()) { %>
+                            <% if (i <= 10) {%>
+                            <tr>    
+                                <td><%= i++%>º</td>
+                                <td><%= p.getName()%></td>
+                                <td><%= p.getScore()%></td>
+                            </tr>
+                            <% } %>  
+                            <%}%>
+                    </tbody>
+                  </table>
+            </div>
+            
+            <div class="col-md-6">
+            <strong>Historico</strong>
+            <table class="table">
+                <thead>
+                    
+                  <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% DateFormat df = new SimpleDateFormat("dd/MM/yyyy");%>
+                  <% for (Player p :Db.getPlayers()) {%>
+                    <tr>
+                        <td><%= p.getName()%></td>
+                        <td><%= p.getScore()%></td>
+                        <td><%= df.format(p.getData())%></td>
+                    </tr>
+                    <%}%>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
         </div>
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

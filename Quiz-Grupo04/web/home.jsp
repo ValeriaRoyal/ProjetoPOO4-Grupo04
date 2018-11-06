@@ -4,6 +4,8 @@
     Author     : valre
 --%>
 
+<%@page import="java.util.Calendar"%>
+<%@page import="br.com.fatecpg.quiz.Player"%>
 <%@page import="br.com.fatecpg.quiz.Quiz"%>
 <%@page import="br.com.fatecpg.quiz.Db"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,13 +19,20 @@
     <body class="text-center">
         <h1>Quiz</h1>
          <% if (request.getParameter("quizz") != null){
-            int cdz = 0;
+            double score = 0;
             for (Quiz q: Db.getQuiz()){
                 String userAnswer = request.getParameter(q.getQuiz());
                 if(userAnswer.equals(q.getAnswer())){
-                    cdz++;
+                    score++;
                 }
-            } %>
+            } 
+         
+                Calendar calen = Calendar.getInstance();
+                calen.set(calen.get(Calendar.YEAR), calen.get(Calendar.MONTH), calen.get(Calendar.DATE);
+                Db.getPlayers().add(new Player(k, score, calen.getTime()));
+                    response.sendRedirect("profile.jsp");
+         // revendo isso aqui
+         %>
             <div class="form-signin btn-outline-light">
             <h1 style="color:gold">
                 Nota: <u><%= Math.round(100*((double)(cdz)/10.0)) %></u>
