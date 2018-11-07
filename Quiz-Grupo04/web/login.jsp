@@ -43,6 +43,7 @@
                     </thead>
                            <%int i =1; %>      
                     <tbody>
+                        
                        <% for (Player p : Db.getPlayers()) { %>
                             <% if (i <= 10) {%>
                             <tr>    

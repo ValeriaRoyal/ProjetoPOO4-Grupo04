@@ -33,44 +33,46 @@ public class Db {
         return quiz;
         
     }
-     private static final ArrayList<Player> player = new ArrayList<>();
+     private static  ArrayList<Player> player = new ArrayList<Player>();
         public static ArrayList<Player> getPlayers(){
         
             Calendar c = Calendar.getInstance();
             
             if (player.isEmpty()){          
             c.set(2012, 2, 20);
-            player.add(new Player("Valéria", 6.0 , c.getTime()));
+            player.add(new Player("Carlos", 10.0 , c.getTime()));
+            
+            c.set(2012, 2, 20);
+            player.add(new Player("Miguel", 10.0 , c.getTime()));
+            
+            c.set(2012, 20, 39);
+            player.add(new Player("Elena", 8.0 , c.getTime()));
+            
+            c.set(2012, 20, 20);
+            player.add(new Player("Rafael", 7.0 , c.getTime()));
             
             c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Valéria", 6.0 , c.getTime()));
+            player.add(new Player("Virginia", 9.0 , c.getTime()));
+            
+            c.set(2012, 2, 39);
+            player.add(new Player("Luiz", 2.0 , c.getTime()));
             
             c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
+            player.add(new Player("Mikael", 5.0 , c.getTime()));
+            
+            c.set(2012, 2, 20);
+            player.add(new Player("Gilson", 4.0 , c.getTime()));
             
             c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
+            player.add(new Player("Nanami", 10.0 , c.getTime()));
             
             c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
-            
-            c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
-            
-            c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
-            
-            c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
-            
-            c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
-            
-            c.set(2012, 2, 20, 20, 39);
-            player.add(new Player("Regina", 6.0 , c.getTime()));
+            player.add(new Player("Laura", 6.0 , c.getTime()));
             
             }
          
          return player;
      }
+        
+        
 }

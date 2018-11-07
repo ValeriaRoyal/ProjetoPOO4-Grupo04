@@ -18,24 +18,17 @@
     </head>
     <body class="text-center">
         <h1>Quiz</h1>
-         <% if (request.getParameter("quizz") != null){
-            double score = 0;
+           <% if (request.getParameter("quizz") != null){
+            int score = 0;
             for (Quiz q: Db.getQuiz()){
                 String userAnswer = request.getParameter(q.getQuiz());
                 if(userAnswer.equals(q.getAnswer())){
                     score++;
                 }
-            } 
-         
-                Calendar calen = Calendar.getInstance();
-                calen.set(calen.get(Calendar.YEAR), calen.get(Calendar.MONTH), calen.get(Calendar.DATE);
-                Db.getPlayers().add(new Player(k, score, calen.getTime()));
-                    response.sendRedirect("profile.jsp");
-         // revendo isso aqui
-         %>
+            } %>
             <div class="form-signin btn-outline-light">
             <h1 style="color:gold">
-                Nota: <u><%= Math.round(100*((double)(cdz)/10.0)) %></u>
+                Nota: <u><%= 100*((double)(score)/10.0) %></u>
             </h1>
             <% } %>
             </div> 
