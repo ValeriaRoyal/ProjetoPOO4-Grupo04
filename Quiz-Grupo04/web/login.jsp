@@ -23,13 +23,16 @@
         <div class="row align-items-center" >
             <div class="col-md-12">
                 
-                <form class="form-signin">
+                <% if (request.getParameter("login") == null ) {%>
+                    <form class="form-signin">
                     <h1 class="h3 mb-3 font-weight-normal">Insira o login</h1>
                     <label for="inputUser" class="sr-only">Nome do usuário</label>
-                    <input type="user" id="inputUser" class="form-control" placeholder="Nome do usuário" required autofocus>
-                    <button class="btn btn-lg btn-outline-light btn-block"  type="submit" formaction="home.jsp">Entrar no Quiz</button>
-                </form>
-            
+                    <input type="text"  name="login" id="inputUser" class="form-control" placeholder="Nome do usuário" required autofocus>
+                    <%} else {%>
+                    <a class="btn btn-lg btn-outline-light btn-block" href="home.jsp" role="button">Entrar no Quiz</a>
+                    </form>    
+                <%}%>
+                
             </div>
             <div class="col-md-6">
                 <strong>Top 10</strong>
